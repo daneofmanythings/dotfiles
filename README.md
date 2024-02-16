@@ -9,7 +9,7 @@ sudo apt install git stow
 ```
 note: use the package manager for your distro.
 
-## INSTALLATION
+## USAGE
 
 - Check out this repo into your $HOME directory. You can place it into any
 directory, but the stow command will have an extra flag. Stow defaults to
