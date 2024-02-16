@@ -19,6 +19,11 @@ cd dotfiles
 
 - Use GNU stow to create the symlinks
 
+...to link all the configs
 ```
-stow .
+stow */
+```
+...or link an individual config (ex. with zsh)
+```
+stow zsh
 ```
