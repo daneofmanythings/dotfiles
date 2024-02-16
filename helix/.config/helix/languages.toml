@@ -1,0 +1,15 @@
+[[language]]
+name = "go"
+auto-format = true
+formatter = { command = "goimport" }
+
+[language-server.emmet-lsp]
+command = "emmet-language-server"
+args = ["--stdio"]
+
+[[language]]
+name = "html"
+roots = [".git"]
+language-servers = ["emmet-lsp"]
+
+
