@@ -65,3 +65,9 @@ alias xeph="Xephyr :5 & sleep 1 ; DISPLAY=:5 awesome"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/dane/google-cloud-sdk/path.zsh.inc' ]; then . '/home/dane/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/dane/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/dane/google-cloud-sdk/completion.zsh.inc'; fi

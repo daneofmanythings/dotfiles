@@ -5,7 +5,7 @@
 local opts = vim.opt
 
 opts.scrolloff = 8
-opts.colorcolumn = "80"
+opts.colorcolumn = "120"
 opts.shiftwidth = 2
 opts.tabstop = 2
 opts.cursorline = true
