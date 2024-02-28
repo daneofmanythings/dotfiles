@@ -1,10 +1,5 @@
 return {
   "nvim-neorg/neorg",
-  dependencies = {
-    {
-      "nvim-lua/plenary.nvim",
-    },
-  },
   build = ":Neorg sync-parsers",
   ft = "norg",
   cmd = "Neorg",
@@ -40,6 +35,11 @@ return {
           end,
         },
       },
+      ["external.list-colors"] = {},
     },
+  },
+  dependencies = {
+    { "nvim-lua/plenary.nvim" },
+    { dir = "$HOME/code/projects/list_colors" }, -- custom module testing
   },
 }

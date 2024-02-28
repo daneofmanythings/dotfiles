@@ -71,3 +71,4 @@ if [ -f '/home/dane/google-cloud-sdk/path.zsh.inc' ]; then . '/home/dane/google-
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/dane/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/dane/google-cloud-sdk/completion.zsh.inc'; fi
+fpath+=${ZDOTDIR:-~}/.zsh_functions
