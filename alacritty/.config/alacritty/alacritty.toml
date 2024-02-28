@@ -15,7 +15,7 @@ multiplier = 3
 decorations = "none"
 opacity = 0.9
 
-# Colorscheme
+# Melange
 [colors.primary]
 foreground = '#ECE1D7'
 background = '#292522'

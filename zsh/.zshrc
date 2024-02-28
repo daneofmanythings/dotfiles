@@ -5,13 +5,13 @@ export PATH=/home/dane/.local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$HOME/go/bin:$PATH
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 
 ### ANTIDOTE ###
 # Clone antidote if necessary.
@@ -31,14 +31,18 @@ if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
 fi
 source ${zsh_plugins}.zsh
 
-# PROMPT
-autoload -Uz vcs_info
-precmd() { vcs_info }
+### PROMPT ###
 
-zstyle ':vcs_info:git:*' formats '%b '
+eval "$(starship init zsh)" # actually fast
 
-setopt PROMPT_SUBST
-PROMPT='%F{green}%*%f %F{blue}%3~%f %F{red}${vcs_info_msg_0_}%f$ '
+# # Basic
+# autoload -Uz vcs_info
+# precmd() { vcs_info }
+#
+# zstyle ':vcs_info:git:*' formats '%b '
+#
+# setopt PROMPT_SUBST
+# PROMPT='%F{green}%*%f %F{blue}%3~%f %F{red}${vcs_info_msg_0_}%f$ '
 
 
 # ALIASES
@@ -67,8 +71,8 @@ alias xeph="Xephyr :5 & sleep 1 ; DISPLAY=:5 awesome"
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/dane/google-cloud-sdk/path.zsh.inc' ]; then . '/home/dane/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/dane/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/dane/google-cloud-sdk/completion.zsh.inc'; fi
-fpath+=${ZDOTDIR:-~}/.zsh_functions
+# if [ -f '/home/dane/google-cloud-sdk/path.zsh.inc' ]; then . '/home/dane/google-cloud-sdk/path.zsh.inc'; fi
+#
+# # The next line enables shell command completion for gcloud.
+# if [ -f '/home/dane/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/dane/google-cloud-sdk/completion.zsh.inc'; fi
+# fpath+=${ZDOTDIR:-~}/.zsh_functions
