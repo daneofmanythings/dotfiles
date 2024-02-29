@@ -4,5 +4,5 @@
 
 2. Then proceed as normal running the stow command from /dotfiles
 ```
-stow nvim
+stow nvchad
 ```
