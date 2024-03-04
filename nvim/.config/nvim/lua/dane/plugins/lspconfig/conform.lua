@@ -1,5 +1,6 @@
 return { -- Autoformat
   'stevearc/conform.nvim',
+  event = { 'InsertEnter' },
   opts = {
     notify_on_error = false,
     format_on_save = {

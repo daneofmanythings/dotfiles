@@ -1,4 +1,4 @@
-local map = vim.keymap.set 
+local map = vim.keymap.set
 
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
@@ -16,11 +16,7 @@ map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]ui
 -- or just use <C-\><C-n> to exit terminal mode
 map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---
---  See `:help wincmd` for a list of all window commands
-map('n', '<C-<left>>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-map('n', '<C-<right>>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-map('n', '<C-<up>>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-map('n', '<C-<down>>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+map({ 'n', 'i' }, '<C-s>', '<esc><cmd>w<cr>', { desc = 'Save' })
+map('n', '<C-q>', '<cmd>:qall<esc>', { desc = 'Quit all' })
+map('v', '>', '>gv', { desc = 'Better visual indenting' })
+map('v', '<', '<gv', { desc = 'Better visual indenting' })
