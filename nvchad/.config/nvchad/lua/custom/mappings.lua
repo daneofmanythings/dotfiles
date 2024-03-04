@@ -37,13 +37,19 @@ M.neorg = {
 
 M.telescope = {
 	n = {
-		["<leader>tf"] = { "<cmd> Telescope find_files <CR>", "Find files" },
-		["<leader>ta"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
-		["<leader>tw"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
-		["<leader>,"] = { "<cmd> Telescope buffers <CR>", "Find buffers" },
-		["<leader>th"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
-		["<leader>to"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles" },
-		["<leader>ts"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
+		["<leader>tf"] = { "<cmd>Telescope find_files <CR>", "Find files" },
+		["<leader>ta"] = { "<cmd>Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
+		["<leader>tw"] = { "<cmd>Telescope live_grep <CR>", "Live grep" },
+		["<leader>,"] = { "<cmd>Telescope buffers sort_mru=true sort_lastused=true<CR>", "Find buffers" },
+		["<leader>th"] = { "<cmd>Telescope help_tags <CR>", "Help page" },
+		["<leader>to"] = { "<cmd>Telescope oldfiles <CR>", "Find oldfiles" },
+		["<leader>ts"] = { "<cmd>Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
+		["<leader>tk"] = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+		-- NOTE: This has a hard coded path to the config in my dotfile directory.
+		["<leader>tc"] = {
+			'<cmd>Telescope find_files search_dirs={"$HOME/dotfiles/nvchad/.config/nvim/lua/custom/"}<cr>',
+			"Find config",
+		},
 
 		-- git
 		-- ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },

@@ -3,6 +3,7 @@ local plugins = {
 	{
 		"williamboman/mason.nvim",
 		opts = require("custom.configs.mason"),
+		dependencies = { "williamboman/mason-lspconfig.nvim" },
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -29,7 +30,7 @@ local plugins = {
 	-- AUTO-FORMATTING --
 	{
 		"stevearc/conform.nvim",
-		event = "BufWritePre",
+		event = { "BufWritePre", "BufNewFile" },
 		config = function()
 			require("custom.configs.conform")
 		end,
@@ -65,7 +66,7 @@ local plugins = {
 	},
 	{
 		"wakatime/vim-wakatime",
-		lazy = false,
+		event = "VeryLazy",
 	},
 	{
 		"nvim-neorg/neorg",
@@ -77,6 +78,14 @@ local plugins = {
 			{ "nvim-lua/plenary.nvim" },
 			{ dir = "$HOME/code/projects/list_colors" }, -- custom module testing
 		},
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
 	},
 	{
 		"echasnovski/mini.indentscope",
@@ -107,6 +116,10 @@ local plugins = {
 				end,
 			})
 		end,
+	},
+	{
+		"nvim-lua/plenary.nvim",
+		lazy = true,
 	},
 }
 
