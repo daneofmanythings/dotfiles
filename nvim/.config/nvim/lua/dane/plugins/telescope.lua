@@ -7,10 +7,9 @@ return {
       'nvim-telescope/telescope-fzf-native.nvim',
       build = 'make',
       cond = function()
-        return vim.fn.executable 'make' == 1
+        return vim.fn.executable('make') == 1
       end,
     },
-    -- { 'nvim-telescope/telescope-ui-select.nvim' },
     { 'nvim-tree/nvim-web-devicons' },
   },
   keys = {
@@ -25,18 +24,26 @@ return {
     { '<leader>s.', '<cmd>Telescope oldfiles<cr>', desc = '[S]earch Recent Files ("." for repeat)' },
     { '<leader>,', '<cmd>Telescope buffers<cr>', desc = 'Search Open Buffers' },
     { '<leader><leader>', '<cmd>Telescope buffers<cr>', desc = '[ ] Find existing buffers' },
-    { '<leader>/', '<cmd>Telescope current_buffer_fuzzy_find<cr><cr>', desc = '[/] Fuzzily search in current buffer' },
+    {
+      '<leader>/',
+      '<cmd>Telescope current_buffer_fuzzy_find<cr><cr>',
+      desc = '[/] Fuzzily search in current buffer',
+    },
     { '<leader>s/', '<cmd>Telescope live_grep<cr><cr>', desc = '[S]earch [/] in Open Files' },
-    { '<leader>sn', '<cmd>Telescope find_files search_dirs={"$HOME/dotfiles/nvim/.config/nvim/"}<cr>', { desc = '[S]earch [N]eovim files' } },
+    {
+      '<leader>sn',
+      '<cmd>Telescope find_files search_dirs={"$HOME/dotfiles/nvim/.config/nvim/"}<cr>',
+      { desc = '[S]earch [N]eovim files' },
+    },
   },
   config = function()
-    require('telescope').setup {
+    require('telescope').setup({
       extensions = {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
         },
       },
-    }
+    })
     -- Enable telescope extensions, if they are installed
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')

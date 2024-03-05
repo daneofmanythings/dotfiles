@@ -44,7 +44,7 @@ return { -- LSP Configuration & Plugins
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
-    local lspconfig = require 'lspconfig'
+    local lspconfig = require('lspconfig')
     local load_lsp = require('dane.utils').load_lsp
     local servers = {
       'lua_ls',
@@ -52,6 +52,7 @@ return { -- LSP Configuration & Plugins
       'clangd',
       'pyright',
     }
+    -- Setting language server configurations.
     for _, server in ipairs(servers) do
       lspconfig[server].setup(load_lsp(server, capabilities))
     end

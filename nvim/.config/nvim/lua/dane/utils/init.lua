@@ -1,4 +1,4 @@
-local lspconfigs = 'dane.plugins.lspconfig.configs'
+local lspconfigs = 'dane.plugins.lsp.configs'
 local colorschemes = 'dane.plugins.colorschemes'
 
 local M = {}

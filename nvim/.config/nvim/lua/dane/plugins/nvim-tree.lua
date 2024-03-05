@@ -7,7 +7,7 @@ return {
     { '<leader>e', '<cmd>NvimTreeToggle<cr>', desc = 'NvimTreeToggle' },
   },
   config = function()
-    require('nvim-tree').setup {
+    require('nvim-tree').setup({
       sort = { sorter = 'case_sensitive' },
       filters = {
         dotfiles = false,
@@ -82,6 +82,6 @@ return {
           },
         },
       },
-    }
+    })
   end,
 }

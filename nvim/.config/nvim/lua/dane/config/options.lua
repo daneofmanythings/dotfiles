@@ -37,6 +37,6 @@ opt.expandtab = true
 opt.shiftround = true
 
 opt.hlsearch = true
-opt.whichwrap:append '<>[]hl'
+opt.whichwrap:append('<>[]hl')
 opt.termguicolors = true
 opt.confirm = true

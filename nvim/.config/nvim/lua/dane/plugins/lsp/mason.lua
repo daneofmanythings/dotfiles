@@ -6,11 +6,7 @@ return {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
   },
   config = function()
-    local mason = require 'mason'
-    local mason_lspconfig = require 'mason-lspconfig'
-    local mason_tools = require 'mason-tool-installer'
-
-    mason.setup {
+    require('mason').setup({
       ui = {
         icons = {
           package_installed = '✓',
@@ -18,9 +14,9 @@ return {
           package_uninstalled = '✗',
         },
       },
-    }
+    })
 
-    mason_lspconfig.setup {
+    require('mason-lspconfig').setup({
       ensure_installed = {
         -- Lua
         'lua_ls',
@@ -30,22 +26,28 @@ return {
         'pyright',
         -- C++
         'clangd',
+        -- Rust
+        'rust_analyzer',
       },
       automatic_installation = true,
-    }
+    })
 
-    mason_tools.setup {
+    -- TODO: Fix this. it is not installing those from ensure_installed.
+    require('mason-tool-installer').setup({
       ensure_installed = {
         -- Lua
         'stylua', -- formatter
         -- Go
         'gofumpt', -- formatter
-        'goimports', -- organize imports
+        'goimports', -- format imports
         -- Python
+        'black', -- formatter
         'ruff', -- general linter
         'mypy', -- static typing linter
         -- C++
+        'clangd-format', -- formatter
       },
-    }
+      auto_update = true,
+    })
   end,
 }

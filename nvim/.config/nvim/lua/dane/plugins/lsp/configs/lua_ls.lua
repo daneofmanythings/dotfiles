@@ -8,8 +8,8 @@ return {
       workspace = {
         -- checkThirdParty = false, -- NOTE: Disabled this to see what happens
         library = {
-          [vim.fn.expand '$VIMRUNTIME/lua'] = true,
-          [vim.fn.expand '$VIMRUNTIME/lua/vim/lsp'] = true,
+          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
           -- '${3rd}/luv/library',
           -- unpack(vim.api.nvim_get_runtime_file('', true)),
         },
