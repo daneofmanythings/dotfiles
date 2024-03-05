@@ -16,7 +16,7 @@ map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]ui
 -- or just use <C-\><C-n> to exit terminal mode
 map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
-map({ 'n', 'i' }, '<C-s>', '<esc><cmd>w<cr>', { desc = 'Save' })
+map({ 'n', 'i', 'v' }, '<C-s>', '<esc><cmd>wa<cr>', { desc = 'Save' })
 map('n', '<C-q>', '<cmd>:qall<esc>', { desc = 'Quit all' })
 map('v', '>', '>gv', { desc = 'Better visual indenting' })
 map('v', '<', '<gv', { desc = 'Better visual indenting' })

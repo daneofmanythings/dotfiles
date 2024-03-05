@@ -1,20 +1,20 @@
 return {
   -- cmd = {...},
-  -- filetypes { ...},
+  filetypes = { 'lua' },
   -- capabilities = {},
   settings = {
     Lua = {
       runtime = { version = 'LuaJIT' },
       workspace = {
-        checkThirdParty = false,
-        -- Tells lua_ls where to find all the Lua files that you have loaded
-        -- for your neovim configuration.
+        -- checkThirdParty = false, -- NOTE: Disabled this to see what happens
         library = {
-          '${3rd}/luv/library',
-          unpack(vim.api.nvim_get_runtime_file('', true)),
+          [vim.fn.expand '$VIMRUNTIME/lua'] = true,
+          [vim.fn.expand '$VIMRUNTIME/lua/vim/lsp'] = true,
+          -- '${3rd}/luv/library',
+          -- unpack(vim.api.nvim_get_runtime_file('', true)),
         },
-        -- If lua_ls is really slow on your computer, you can try this instead:
-        -- library = { vim.env.VIMRUNTIME },
+        maxPreload = 100000,
+        preloadFilesize = 10000,
       },
       completion = {
         callSnippet = 'Replace',

@@ -1,5 +1,5 @@
-local lspconfigs = 'lua.dane.plugins.lspconfig.configs'
-local colorschemes = 'lua.dane.plugins.colorschemes'
+local lspconfigs = 'dane.plugins.lspconfig.configs'
+local colorschemes = 'dane.plugins.colorschemes'
 
 local M = {}
 
@@ -7,8 +7,10 @@ M.load_from_file = function(path, filename)
   return require(path .. '.' .. filename)
 end
 
-M.load_lsp = function(lsp)
-  return M.load_from_file(lspconfigs, lsp)
+M.load_lsp = function(lsp, capabilities)
+  local config = M.load_from_file(lspconfigs, lsp)
+  config.capabilities = capabilities
+  return config
 end
 
 M.load_colorscheme = function(scheme)
