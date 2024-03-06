@@ -89,16 +89,6 @@ M.border = { -- https://www.w3.org/TR/xml-entity-names/025.html
     '╙',
     '║',
   },
-  border_hl = function(border_table, hl)
-    return {
-      { border_table[1], hl },
-      { border_table[2], hl },
-      { border_table[3], hl },
-      { border_table[4], hl },
-      { border_table[5], hl },
-      { border_table[6], hl },
-    }
-  end,
 }
 
 return M
