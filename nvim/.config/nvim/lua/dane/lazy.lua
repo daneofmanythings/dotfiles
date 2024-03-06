@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   { import = 'dane.plugins' },
   { import = 'dane.plugins.lsp' },
+  { import = 'dane.plugins.colorschemes' },
 }, {
   install = {
     colorscheme = { 'melange' },

@@ -2,15 +2,9 @@ return {
   'lewis6991/gitsigns.nvim',
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
+    local icons = require('dane.static.icons')
     require('gitsigns').setup({
-      signs = {
-        add = { text = '▎' },
-        change = { text = '▎' },
-        delete = { text = '' },
-        topdelete = { text = '' },
-        changedelete = { text = '▎' },
-        untracked = { text = '▎' },
-      },
+      signs = icons.gitsigns,
     })
   end,
 }

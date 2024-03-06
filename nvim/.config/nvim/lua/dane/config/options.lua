@@ -40,3 +40,5 @@ opt.hlsearch = true
 opt.whichwrap:append('<>[]hl')
 opt.termguicolors = true
 opt.confirm = true
+
+opt.pumheight = 10

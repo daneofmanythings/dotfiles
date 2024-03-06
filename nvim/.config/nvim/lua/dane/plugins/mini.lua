@@ -1,7 +1,6 @@
-local mini_path = 'lua.dane.plugins.mini.'
-
 return { -- Collection of various small independent plugins/modules
   'echasnovski/mini.nvim',
+  event = { 'BufReadPost', 'BufNewFile' },
   config = function()
     -- Better Around/Inside textobjects
     --

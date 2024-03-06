@@ -1,7 +1,7 @@
 return {
   'nvim-lualine/lualine.nvim',
-  event = { 'VimEnter' },
   config = function()
+    local icons = require('dane.static.icons')
     require('lualine').setup({
       options = {
         icons_enabled = true,
@@ -27,11 +27,7 @@ return {
           'branch',
           {
             'diff',
-            symbols = {
-              added = ' ',
-              modified = ' ',
-              removed = ' ',
-            },
+            symbols = icons.gitdiff,
             source = function()
               local gitsigns = vim.b.gitsigns_status_dict
               if gitsigns then
@@ -53,7 +49,7 @@ return {
               info = 'DiagnosticInfo',
               hint = 'DiagnosticHint',
             },
-            symbols = { error = ' ', warn = ' ', hint = ' ', info = ' ' },
+            symbols = icons.diagnostics,
             colored = true,
           },
         },

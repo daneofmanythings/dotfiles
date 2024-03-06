@@ -58,25 +58,49 @@ return {
   },
   config = function()
     -- See `:help cmp`
+    local icons = require('dane.static.icons')
     local cmp = require('cmp')
     local luasnip = require('luasnip')
     luasnip.config.setup({})
 
+    -- setting up the settings for the window borders of the completion
+    -- using the builtin cmp.config.window.bordered(opts)
+    local border_opts = {}
+    border_opts.border = icons.border.single_curved
+    border_opts.winhighlight = 'Normal:Normal,FloatBorder:Command,CursorLine:Visual,Search:None'
+    border_opts.scrolloff = 2
+
     cmp.setup({
+      view = {
+        entries = { name = 'custom', selection_order = 'near_cursor' },
+      },
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
       },
       formatting = {
+        -- TODO: here be custom icons
+        format = function(entry, vim_item)
+          -- Kind icons
+          vim_item.kind = string.format('%s', icons.kind_icons[vim_item.kind]) -- only symbols
+          vim_item.menu = ({
+            buffer = '[Buf]',
+            nvim_lsp = '[LSP]',
+            luasnip = '[Snip]',
+            nvim_lua = '[Lua]',
+            latex_symbols = '[LaTeX]',
+          })[entry.source.name]
+          return vim_item
+        end,
         fields = { 'kind', 'abbr', 'menu' },
       },
       completion = {
         completeopt = 'menu,menuone,noinsert',
       },
       window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(border_opts),
+        documentation = cmp.config.window.bordered(border_opts),
       },
 
       mapping = cmp.mapping.preset.insert({

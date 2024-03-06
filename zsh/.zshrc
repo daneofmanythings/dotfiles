@@ -24,7 +24,7 @@ eval "$(pyenv init -)"
 # Load the plugin
 source ~/.antidote/antidote.zsh
 
-#Lazyload the plugins
+#Lazy load the plugins
 zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins
 if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
   (

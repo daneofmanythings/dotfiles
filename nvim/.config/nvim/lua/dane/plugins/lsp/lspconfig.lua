@@ -3,12 +3,11 @@ return { -- LSP Configuration & Plugins
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
-    'williamboman/mason.nvim',
     { 'j-hui/fidget.nvim', opts = {} },
   },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
-      group = vim.api.nvim_create_augroup('user-lsp-attach', { clear = true }),
+      group = vim.api.nvim_create_augroup('lsp-keybinds', { clear = true }),
       callback = function(event)
         local map = function(keys, func, desc)
           vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
@@ -23,20 +22,6 @@ return { -- LSP Configuration & Plugins
         map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
         map('K', vim.lsp.buf.hover, 'Hover Documentation')
         map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-
-        -- Provides symbol highlighting when stopped on a symbol
-        local client = vim.lsp.get_client_by_id(event.data.client_id)
-        if client and client.server_capabilities.documentHighlightProvider then
-          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-            buffer = event.buf,
-            callback = vim.lsp.buf.document_highlight,
-          })
-
-          vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-            buffer = event.buf,
-            callback = vim.lsp.buf.clear_references,
-          })
-        end
       end,
     })
 
@@ -45,13 +30,20 @@ return { -- LSP Configuration & Plugins
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     local lspconfig = require('lspconfig')
-    local load_lsp = require('dane.utils').load_lsp
     local servers = {
       'lua_ls',
       'gopls',
       'clangd',
       'pyright',
     }
+
+    -- Note: Hard coded relative path to the lsp configs.
+    local load_lsp = function(lsp, c)
+      local config = require('dane.plugins.lsp.configs.' .. lsp)
+      config.capabilities = c
+      return config
+    end
+
     -- Setting language server configurations.
     for _, server in ipairs(servers) do
       lspconfig[server].setup(load_lsp(server, capabilities))
