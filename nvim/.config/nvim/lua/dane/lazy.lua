@@ -18,7 +18,7 @@ require('lazy').setup({
   { import = 'dane.plugins.colorschemes' },
 }, {
   install = {
-    colorscheme = { 'melange' },
+    colorscheme = { 'catppuccin' },
   },
   checker = {
     enabled = true,
@@ -26,5 +26,8 @@ require('lazy').setup({
   },
   change_detection = {
     notify = false,
+  },
+  dev = {
+    path = '~/code/projects/',
   },
 })

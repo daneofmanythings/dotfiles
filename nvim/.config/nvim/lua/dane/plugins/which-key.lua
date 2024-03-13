@@ -1,6 +1,8 @@
 return {
   'folke/which-key.nvim',
-  event = 'VimEnter',
+  keys = {
+    { '<leader>', '', desc = 'Start WhichKey' },
+  },
   config = function()
     require('which-key').setup()
 

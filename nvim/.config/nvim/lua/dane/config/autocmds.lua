@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Sets diagnostic signs for the gutter
 vim.api.nvim_create_autocmd('VimEnter', {
   desc = 'Set Diagnostic Gutter Icons',
-  group = vim.api.nvim_create_augroup('set-diagnostic-gutter-icons', { clear = true }),
+  group = vim.api.nvim_create_augroup('diagnostic-icons', { clear = true }),
   callback = function()
     local icons = require('dane.static.icons')
     for name, icon in pairs(icons.gutter_diagnostics) do

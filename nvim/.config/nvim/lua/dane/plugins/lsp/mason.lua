@@ -45,7 +45,7 @@ return {
         'ruff', -- general linter
         'mypy', -- static typing linter
         -- C++
-        'clangd-format', -- formatter
+        'clang-format', -- formatter
       },
       auto_update = true,
     })

@@ -6,6 +6,7 @@ return {
 
     lint.formatters_by_ft = {
       python = { 'ruff', 'mypy' },
+      -- lua = { 'selene' },
     }
 
     local lint_group = vim.api.nvim_create_augroup('linting', { clear = true })

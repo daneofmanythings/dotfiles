@@ -83,7 +83,7 @@ return {
         -- TODO: here be custom icons
         format = function(entry, vim_item)
           -- Kind icons
-          vim_item.kind = string.format('%s', icons.kind_icons[vim_item.kind]) -- only symbols
+          vim_item.kind = string.format('%s %s', icons.kind_icons[vim_item.kind], string.sub(vim_item.kind, 1, 3)) -- only symbols
           vim_item.menu = ({
             buffer = '[Buf]',
             nvim_lsp = '[LSP]',
@@ -121,9 +121,9 @@ return {
         end, { 'i', 's' }),
       }),
       sources = {
-        { name = 'nvim_lsp' },
-        { name = 'nvim_lua' },
         { name = 'luasnip' },
+        { name = 'nvim_lua' },
+        { name = 'nvim_lsp' },
         { name = 'buffer' },
         { name = 'path' },
       },

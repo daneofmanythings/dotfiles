@@ -3,6 +3,8 @@ return {
   branch = '0.1.x',
   dependencies = {
     'nvim-lua/plenary.nvim',
+    'nvim-tree/nvim-web-devicons',
+    'folke/todo-comments.nvim',
     {
       'nvim-telescope/telescope-fzf-native.nvim',
       build = 'make',
@@ -10,8 +12,8 @@ return {
         return vim.fn.executable('make') == 1
       end,
     },
-    { 'nvim-tree/nvim-web-devicons' },
   },
+  -- stylua: ignore
   keys = {
     { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = '[S]earch [H]elp' },
     { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = '[S]earch [K]eymaps' },
@@ -21,14 +23,10 @@ return {
     { '<leader>sg', '<cmd>Telescope live_grep<cr>', desc = '[S]earch by [G]rep' },
     { '<leader>sd', '<cmd>Telescope diagnostics<cr>', desc = '[S]earch [D]iagnostics' },
     { '<leader>sr', '<cmd>Telescope resume<cr>', desc = '[S]earch [R]esume' },
+    { '<leader>st', '<cmd>TodoTelescope<cr>', desc = '[S]earch [T]odos' },
     { '<leader>s.', '<cmd>Telescope oldfiles<cr>', desc = '[S]earch Recent Files ("." for repeat)' },
-    { '<leader>,', '<cmd>Telescope buffers<cr>', desc = 'Search Open Buffers' },
-    { '<leader><leader>', '<cmd>Telescope buffers<cr>', desc = '[ ] Find existing buffers' },
-    {
-      '<leader>/',
-      '<cmd>Telescope current_buffer_fuzzy_find<cr><cr>',
-      desc = '[/] Fuzzily search in current buffer',
-    },
+    { '<leader>,', '<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>', desc = 'Search Open Buffers' },
+    { '<leader>/', '<cmd>Telescope current_buffer_fuzzy_find<cr><cr>', desc = '[/] Fuzzily search in current buffer' },
     { '<leader>s/', '<cmd>Telescope live_grep<cr><cr>', desc = '[S]earch [/] in Open Files' },
     {
       '<leader>sn',

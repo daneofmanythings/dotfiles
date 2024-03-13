@@ -21,7 +21,6 @@ opt.undofile = true
 opt.splitright = true
 opt.splitbelow = true
 
-opt.list = true
 opt.inccommand = 'split'
 
 opt.scrolloff = 10
@@ -37,8 +36,7 @@ opt.expandtab = true
 opt.shiftround = true
 
 opt.hlsearch = true
-opt.whichwrap:append('<>[]hl')
 opt.termguicolors = true
 opt.confirm = true
 
-opt.pumheight = 10
+opt.pumheight = 10 -- limits the size of cmp window

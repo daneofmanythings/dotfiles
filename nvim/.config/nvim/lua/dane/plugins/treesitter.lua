@@ -1,7 +1,11 @@
 return {
   'nvim-treesitter/nvim-treesitter',
+  version = false,
   build = ':TSUpdate',
   event = { 'BufReadPre', 'BufNewFile' },
+  init = function(plugin)
+    require('nvim-treesitter.query_predicates')
+  end,
   config = function()
     require('nvim-treesitter.configs').setup({
       ensure_installed = {
@@ -18,7 +22,10 @@ return {
       },
 
       auto_install = true,
-      highlight = { enable = true },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
       indent = { enable = true },
     })
   end,

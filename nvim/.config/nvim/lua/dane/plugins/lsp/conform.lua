@@ -22,7 +22,7 @@ return {
 
         python = { 'black' },
 
-        cpp = { 'clangd-format' },
+        cpp = { 'clang-format' },
 
         rust = { 'rust-analyzer' },
       },
