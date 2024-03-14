@@ -34,6 +34,7 @@ return { -- LSP Configuration & Plugins
       'gopls',
       'clangd',
       'pyright',
+      'html',
     }
 
     -- Note: Hard coded relative path to the lsp configs.

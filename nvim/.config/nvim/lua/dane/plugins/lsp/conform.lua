@@ -13,7 +13,10 @@ return {
       },
 
       formatters_by_ft = {
-        lua = { 'stylua' },
+        lua = {
+          'stylua',
+          'luacheck',
+        },
 
         go = {
           'gofumpt',
@@ -25,6 +28,8 @@ return {
         cpp = { 'clang-format' },
 
         rust = { 'rust-analyzer' },
+
+        html = { 'prettier' },
       },
     })
   end,

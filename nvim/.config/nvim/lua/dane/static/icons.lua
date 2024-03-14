@@ -1,12 +1,12 @@
 local M = {}
 
 M.gitsigns = {
-  add = { text = '▌' },
-  change = { text = '▌' },
+  add = { text = '▎' },
+  change = { text = '▎' },
   delete = { text = '' },
   topdelete = { text = '' },
-  changedelete = { text = '▌' },
-  untracked = { text = '▌' },
+  changedelete = { text = '▎' },
+  untracked = { text = '▎' },
 }
 
 M.gitdiff = {
@@ -22,7 +22,7 @@ M.diagnostics = {
   info = ' ',
 }
 
--- Highlight groups have extended names compared to settings.
+-- Highlight groups have capital names compared to settings.
 M.gutter_diagnostics = {
   Error = M.diagnostics.error,
   Warn = M.diagnostics.warn,

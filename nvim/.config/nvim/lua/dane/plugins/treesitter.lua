@@ -3,9 +3,6 @@ return {
   version = false,
   build = ':TSUpdate',
   event = { 'BufReadPre', 'BufNewFile' },
-  init = function(plugin)
-    require('nvim-treesitter.query_predicates')
-  end,
   config = function()
     require('nvim-treesitter.configs').setup({
       ensure_installed = {

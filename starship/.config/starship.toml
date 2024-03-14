@@ -1,7 +1,7 @@
 format = """
-[░▒▓](#7f91b2)\
+[░▒▓](#767b91)\
 $directory\
-[](fg:#7f91b2 bg:#34302c)\
+[](fg:#767b91 bg:#34302c)\
 $git_branch\
 $git_status\
 [](fg:#34302c bg:#212736)\
@@ -9,7 +9,7 @@ $git_status\
 \n$character"""
 
 [directory]
-style = "fg:#ece1d7 bg:#7f91b2"
+style = "fg:#ece1d7 bg:#767b91"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
