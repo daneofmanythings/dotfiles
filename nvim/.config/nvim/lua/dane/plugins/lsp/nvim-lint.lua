@@ -5,14 +5,12 @@ return {
     local lint = require('lint')
 
     lint.formatters_by_ft = {
-      python = { 'ruff', 'mypy' },
-      -- lua = { 'selene' },
+      python = { 'ruff_lsp', 'mypy' },
+      lua = { 'luacheck' },
     }
 
-    local lint_group = vim.api.nvim_create_augroup('linting', { clear = true })
-
     vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufReadPost', 'InsertLeave' }, {
-      group = lint_group,
+      group = vim.api.nvim_create_augroup('linting', { clear = true }),
       callback = function()
         lint.try_lint()
       end,

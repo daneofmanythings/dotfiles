@@ -5,7 +5,7 @@ return {
   cmd = 'Neorg',
   dependencies = {
     { 'nvim-lua/plenary.nvim' },
-    { dir = '$HOME/code/projects/list_colors' }, -- custom module testing
+    -- { dir = '$HOME/code/projects/list_colors' }, -- custom module testing
   },
   keys = {
     { '<leader>ns', '<cmd>Neorg index<cr>', { desc = 'Open Neorg root' } },
@@ -35,7 +35,7 @@ return {
           end,
         },
       },
-      ['external.list-colors'] = { config = { name = 'Dane' } },
+      -- ['external.list-colors'] = { config = { name = 'Dane' } },
     },
   },
 }

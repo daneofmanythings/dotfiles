@@ -1,4 +1,4 @@
-return { -- LSP Configuration & Plugins
+return { -- :h lspconfig-all
   'neovim/nvim-lspconfig',
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
@@ -28,25 +28,41 @@ return { -- LSP Configuration & Plugins
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
+    -- Generic autocmd helper for setting up on_attach functions in the configs
+    local on_attach_loader = function(on_attach)
+      vim.api.nvim_create_autocmd('LspAttach', { -- :h LspAttach
+        callback = function(args)
+          local bufnr = args.buf
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          on_attach(client, bufnr)
+        end,
+      })
+    end
+
     local lspconfig = require('lspconfig')
     local servers = {
       'lua_ls',
       'gopls',
       'clangd',
       'pyright',
+      'ruff_lsp',
       'html',
     }
 
     -- Note: Hard coded relative path to the lsp configs.
-    local load_lsp = function(lsp, c)
+    local load_lsp = function(lsp, c, oal)
       local config = require('dane.plugins.lsp.configs.' .. lsp)
       config.capabilities = c
+      -- if there is an on_attach in the server config, create it as an autocmd
+      if config.on_attach ~= nil then
+        config.on_attach = oal(config.on_attach)
+      end
       return config
     end
 
     -- Setting language server configurations.
     for _, server in ipairs(servers) do
-      lspconfig[server].setup(load_lsp(server, capabilities))
+      lspconfig[server].setup(load_lsp(server, capabilities, on_attach_loader))
     end
   end,
 }

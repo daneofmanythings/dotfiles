@@ -24,6 +24,7 @@ return {
         'gopls',
         -- Python
         'pyright',
+        'ruff_lsp',
         -- C++
         'clangd',
         -- Rust
@@ -42,7 +43,7 @@ return {
         'goimports', -- format imports
         -- Python
         'black', -- formatter
-        'ruff', -- general linter
+        -- 'ruff', -- general linter
         'mypy', -- static typing linter
         -- C++
         'clang-format', -- formatter

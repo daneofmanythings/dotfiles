@@ -16,39 +16,69 @@ local theme = {}
 
 theme.font = "JetBrainsMonoNL Nerd Font 11"
 
--- Catppuccin foreground
-theme.rosewater = "#F5E0DC"
-theme.flamingo = "#F2CDCD"
-theme.pink = "#F5C2E7"
-theme.mauve = "#CBA6F7"
-theme.red = "#F38BA8"
-theme.maroon = "#EBA0AC"
-theme.peach = "#FAB387"
-theme.yellow = "#F9E2AF"
-theme.green = "#A6E3A1"
-theme.teal = "#94E2D5"
-theme.sky = "#74C7EC"
-theme.blue = "#87B2F9"
-theme.lavender = "#B4BEFE"
+-- -- Catppuccin foreground
+-- theme.rosewater = "#F5E0DC"
+-- theme.flamingo = "#F2CDCD"
+-- theme.pink = "#F5C2E7"
+-- theme.mauve = "#CBA6F7"
+-- theme.red = "#F38BA8"
+-- theme.maroon = "#EBA0AC"
+-- theme.peach = "#FAB387"
+-- theme.yellow = "#F9E2AF"
+-- theme.green = "#A6E3A1"
+-- theme.teal = "#94E2D5"
+-- theme.sky = "#74C7EC"
+-- theme.blue = "#87B2F9"
+-- theme.lavender = "#B4BEFE"
+--
+-- -- Catppuccin background
+-- theme.crust = "#11111B"
+-- theme.mantle = "#181825"
+-- theme.base = "#1E1E2E"
+-- theme.surface0 = "#313244"
+-- theme.surface1 = "#43465A"
+-- theme.surface2 = "#565970"
+-- theme.overlay0 = "#696D86"
+-- theme.overlay1 = "#8E95B3"
+-- theme.text = "#C6D0F5"
 
--- Catppuccin background
-theme.crust = "#11111B"
-theme.mantle = "#181825"
-theme.base = "#1E1E2E"
-theme.surface0 = "#313244"
-theme.surface1 = "#43465A"
-theme.surface2 = "#565970"
-theme.overlay0 = "#696D86"
-theme.overlay1 = "#8E95B3"
-theme.text = "#C6D0F5"
+-- Streetchalk
+theme.fg_main = "#ECE1D7"
+theme.select_hl = "#524f4c"
+theme.cursorline = "#403d3b"
+theme.bg_washed = "#34302C"
+theme.bg_main = "#292522"
+theme.black = "#000000"
+
+theme.comments = "#91908e"
+theme.ui_accent = "#a08264"
+theme.delimiter = "#d7b475"
+
+theme.var_main = "#ECE1D7"
+theme.func = "#9fc6b8"
+theme.method = "#8fd1b9"
+theme.string = "#9db2d2"
+theme.type = "#f1b47e"
+theme.field = "#fbdc98"
+theme.keyword = "#cd88b8"
+theme.constant = "#dfaad2" -- and numbers
+theme.preproc = "#cfbfe3"
+theme.operator = "#D47766"
+
+theme.ok = "#78997A"
+theme.warn = "#EBC06D"
+theme.info = "#7F91B2"
+theme.hint = "#9C848F"
+theme.error_light = "#BD8183"
+theme.error_dark = "#7D2A2F"
 
 -- defaults
-theme.bg_normal = "#222222"
-theme.bg_focus = "#535d6c"
-theme.bg_urgent = theme.red
+theme.bg_normal = theme.bg_main
+theme.bg_focus = theme.select_hl
+theme.bg_urgent = theme.operator
 -- theme.bg_urgent                                 = "#ff0000"
 theme.bg_minimize = "#444444"
-theme.bg_systray = theme.bg_normal
+theme.bg_systray = theme.bg_main
 
 theme.fg_normal = "#aaaaaa"
 theme.fg_focus = "#ffffff"
@@ -60,15 +90,15 @@ theme.border_width = dpi(4)
 -- theme.border_normal                             = "#000000"
 -- theme.border_focus                              = "#535d6c"
 -- theme.border_marked                             = "#91231c"
-theme.border_normal = theme.crust
-theme.border_focus = theme.lavender
-theme.border_marked = theme.red
+theme.border_normal = theme.bg_main
+theme.border_focus = theme.fg_main
+theme.border_marked = theme.error_dark
 
 -- Added settings to clean up the look of the taglist
-theme.taglist_fg_focus = theme.border_normal
-theme.taglist_bg_focus = theme.lavender
-theme.taglist_fg_occupied = theme.fg_focus
-theme.taglist_bg_occupied = theme.surface1
+theme.taglist_fg_focus = theme.bg_main
+theme.taglist_bg_focus = theme.fg_main
+theme.taglist_fg_occupied = theme.fg_main
+theme.taglist_bg_occupied = theme.select_hl
 
 -- Adding settings to the tasklist
 theme.tasklist_bg_focus = theme.bg_normal

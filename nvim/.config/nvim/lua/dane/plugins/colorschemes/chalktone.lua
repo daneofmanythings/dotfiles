@@ -1,10 +1,10 @@
 return {
-  'daneofmanythings/firelight.nvim',
+  'daneofmanythings/chalktone.nvim',
   -- enabled = false,
-  dev = true,
-  -- dir = '$HOME/code/projects/firelight.nvim/',
+  -- dev = true,
+  -- dir = '$HOME/code/projects/chalktone.nvim/',
   config = function()
-    require('firelight').setup({
+    require('chalktone').setup({
       palette_name = 'default',
       formatting = {
         Comment = {
@@ -13,13 +13,13 @@ return {
       },
     })
 
-    vim.cmd.colorscheme('firelight')
+    vim.cmd.colorscheme('chalktone')
   end,
   -- dev = true,
   priority = 1000,
   -- branch = 'adding_hls',
   -- config = function()
-  --   require('firelight').setup()
-  --   vim.cmd.colorscheme('firelight')
+  --   require('chalktone').setup()
+  --   vim.cmd.colorscheme('chalktone')
   -- end,
 }

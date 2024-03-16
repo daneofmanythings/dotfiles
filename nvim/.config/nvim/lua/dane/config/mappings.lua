@@ -13,5 +13,5 @@ map('n', '<C-q>', '<cmd>:qall<esc>', { desc = 'Quit all' })
 map('v', '>', '>gv', { desc = 'Better visual indenting' })
 map('v', '<', '<gv', { desc = 'Better visual indenting' })
 
-map('n', '<leader>tr', "<cmd>lua R('dane.plugins.colorschemes.firelight')<cr>", { desc = 'Reloading module for testing' })
+map('n', '<leader>tr', "<cmd>lua R('dane.plugins.colorschemes.chalktone')<cr>", { desc = 'Reloading module for testing' })
 map('n', '<leader>tt', '<Plug>PlenaryTestFile', { desc = 'Running the current test file' })

@@ -18,7 +18,7 @@ require('lazy').setup({
   { import = 'dane.plugins.colorschemes' },
 }, {
   install = {
-    colorscheme = { 'catppuccin' },
+    colorscheme = { 'chalktone' },
   },
   checker = {
     enabled = true,

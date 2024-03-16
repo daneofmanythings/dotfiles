@@ -23,7 +23,7 @@ return {
           'goimports',
         },
 
-        python = { 'black' },
+        python = { 'ruff_lsp' },
 
         cpp = { 'clang-format' },
 
