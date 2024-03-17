@@ -40,3 +40,4 @@ opt.termguicolors = true
 opt.confirm = true
 
 opt.pumheight = 10 -- limits the size of cmp window
+opt.foldnestmax = 0 -- disables folding

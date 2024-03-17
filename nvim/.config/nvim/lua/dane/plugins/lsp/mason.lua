@@ -29,6 +29,10 @@ return {
         'clangd',
         -- Rust
         'rust_analyzer',
+        -- HTML
+        'html',
+        -- Markdown
+        'marksman',
       },
       automatic_installation = true,
     })
@@ -42,7 +46,7 @@ return {
         'gofumpt', -- formatter
         'goimports', -- format imports
         -- Python
-        'black', -- formatter
+        -- 'black', -- formatter -- using ruff_lsp now
         -- 'ruff', -- general linter
         'mypy', -- static typing linter
         -- C++

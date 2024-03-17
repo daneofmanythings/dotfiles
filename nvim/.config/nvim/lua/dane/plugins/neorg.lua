@@ -17,12 +17,22 @@ return {
   opts = {
     load = {
       ['core.defaults'] = {},
-      ['core.concealer'] = { config = { icon_preset = 'diamond' } },
+      ['core.concealer'] = {
+        config = {
+          icon_preset = 'diamond',
+          icons = { -- NOTE: reordering the icons
+            heading = {
+              icons = { '◆', '❖', '◈', '◇', '⟡', '⋄' },
+            },
+          },
+        },
+      },
       ['core.dirman'] = {
         config = {
           workspaces = {
             main = '$HOME/notes',
             journal = '$HOME/notes/journal',
+            inbox = '$HOME/notes/inbox',
           },
           default_workspace = 'main',
         },

@@ -1,5 +1,6 @@
 return {
   'nvim-lualine/lualine.nvim',
+  -- enabled = false,
   config = function()
     local icons = require('dane.static.icons')
     require('lualine').setup({

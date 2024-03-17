@@ -47,6 +47,7 @@ return { -- :h lspconfig-all
       'pyright',
       'ruff_lsp',
       'html',
+      'marksman',
     }
 
     -- Note: Hard coded relative path to the lsp configs.
