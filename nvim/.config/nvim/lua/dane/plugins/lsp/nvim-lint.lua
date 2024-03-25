@@ -7,6 +7,7 @@ return {
     lint.formatters_by_ft = {
       python = { 'ruff_lsp', 'mypy' },
       lua = { 'luacheck' },
+      css = { 'stylelint' },
     }
 
     vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufReadPost', 'InsertLeave' }, {

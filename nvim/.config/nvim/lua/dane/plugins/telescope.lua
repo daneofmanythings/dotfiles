@@ -13,8 +13,8 @@ return {
       end,
     },
   },
-  -- stylua: ignore
   keys = {
+    -- stylua: ignore start
     { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = '[S]earch [H]elp' },
     { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = '[S]earch [K]eymaps' },
     { '<leader>sf', '<cmd>Telescope find_files<cr>', desc = '[S]earch [F]iles' },
@@ -28,11 +28,8 @@ return {
     { '<leader>,', '<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>', desc = 'Search Open Buffers' },
     { '<leader>/', '<cmd>Telescope current_buffer_fuzzy_find<cr><cr>', desc = '[/] Fuzzily search in current buffer' },
     { '<leader>s/', '<cmd>Telescope live_grep<cr><cr>', desc = '[S]earch [/] in Open Files' },
-    {
-      '<leader>sn',
-      '<cmd>Telescope find_files search_dirs={"$HOME/dotfiles/nvim/.config/nvim/"}<cr>',
-      { desc = '[S]earch [N]eovim files' },
-    },
+    { '<leader>sn', '<cmd>Telescope find_files search_dirs={"$HOME/dotfiles/nvim/.config/nvim/"}<cr>', { desc = '[S]earch [N]eovim files' }, },
+    -- stylua: ignore end
   },
   config = function()
     require('telescope').setup({

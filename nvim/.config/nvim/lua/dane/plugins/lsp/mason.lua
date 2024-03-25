@@ -31,6 +31,8 @@ return {
         'rust_analyzer',
         -- HTML
         'html',
+        -- CSS
+        'cssls',
         -- Markdown
         'marksman',
       },
@@ -51,6 +53,10 @@ return {
         'mypy', -- static typing linter
         -- C++
         'clang-format', -- formatter
+        -- HTML, CSS
+        'prettier', -- formatter
+        -- CSS
+        'stylelint', -- linter
       },
       auto_update = true,
     })

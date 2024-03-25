@@ -1,4 +1,4 @@
 return {
   'rktjmp/lush.nvim',
-  enabled = false,
+  -- enabled = false,
 }

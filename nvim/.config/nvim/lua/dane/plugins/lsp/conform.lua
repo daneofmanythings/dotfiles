@@ -30,6 +30,8 @@ return {
         rust = { 'rust-analyzer' },
 
         html = { 'prettier' },
+
+        css = { 'prettier' },
       },
     })
   end,
