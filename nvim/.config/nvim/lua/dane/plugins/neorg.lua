@@ -1,8 +1,16 @@
+-- return {
+--   'nvim-neorg/neorg',
+--   dependencies = { 'luarocks.nvim' },
+--   lazy = false,
+--   version = '*',
+--   config = true,
+-- }
 return {
   'nvim-neorg/neorg',
   build = ':Neorg sync-parsers',
   ft = 'norg',
   cmd = 'Neorg',
+  version = 'v7.0.0',
   dependencies = {
     { 'nvim-lua/plenary.nvim' },
     -- { dir = '$HOME/code/projects/list_colors' }, -- custom module testing
