@@ -1,7 +1,7 @@
 keybinds clear-defaults=true {
     normal {
         bind "Alt q" { Quit; }
-        bind "Alt n" { NewPane;}
+        bind "Alt n" { NewPane; }
         bind "Alt f" { ToggleFocusFullscreen; }
         bind "Alt i" { FocusNextPane; }
         bind "Alt e" { FocusPreviousPane; }
@@ -10,16 +10,8 @@ keybinds clear-defaults=true {
         bind "Alt Down" { MovePane "Down"; }
         bind "Alt Left" { MovePane "Left"; }
         bind "Alt Right" { MovePane "Right"; }
-    }
-    resize {
-        bind "Alt Up" { Resize "Up"; }
-        bind "Alt Down" { Resize "Down"; }
-        bind "Alt Left" { Resize "Left"; }
-        bind "Alt Right" { Resize "Right"; }
-    }
-    session {
-        bind "d" { Detach; }
-        bind "s" {
+        bind "Alt d" { Detach; }
+        bind "Alt s" {
             LaunchOrFocusPlugin "zellij:session-manager" {
                 floating true
                 move_to_focused_tab true
@@ -27,14 +19,17 @@ keybinds clear-defaults=true {
             SwitchToMode "Normal"
         }
     }
+    resize {
+        bind "Up" { Resize "Up"; }
+        bind "Down" { Resize "Down"; }
+        bind "Left" { Resize "Left"; }
+        bind "Right" { Resize "Right"; }
+    }
     shared_except "normal" {
         bind "Esc" { SwitchToMode "normal"; }
     }
     shared_except "resize" {
         bind "Alt r" { SwitchToMode "resize"; }  
-    }
-    shared_except "session" {
-      bind "Alt m" { SwitchToMode "session"; }
     }
 }
 
@@ -115,7 +110,7 @@ default_layout "left-fill-default"
 // Choose the mode that zellij uses when starting up.
 // Default: normal
 //
-// default_mode "locked"
+default_mode "normal"
 
 // Toggle enabling the mouse mode.
 // On certain configurations, or terminals this could
@@ -172,7 +167,7 @@ default_layout "left-fill-default"
 
 // The folder in which Zellij will look for layouts
 //
-// layout_dir "/path/to/my/layout_dir"
+layout_dir "/home/dane/.config/zellij/layouts/"
 
 // The folder in which Zellij will look for themes
 //

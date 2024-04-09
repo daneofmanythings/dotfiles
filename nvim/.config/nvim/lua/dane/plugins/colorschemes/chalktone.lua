@@ -3,7 +3,7 @@ return {
   -- enabled = false,
   priority = 1000,
   lazy = false,
-  -- dev = true,
+  dev = true,
   -- branch = 'saturated',
   config = function()
     -- local C = require('chalktone.colors')
