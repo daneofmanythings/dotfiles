@@ -5,6 +5,9 @@ export PATH=/home/dane/.local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$HOME/go/bin:$PATH
 
+export NOTES="$HOME/notes"
+export ZETTEL="$NOTES/zettel"
+
 # for golang gRPC
 # export PATH="$PATH:$(go env GOPATH)/bin"
 
@@ -12,9 +15,9 @@ export PATH=$HOME/go/bin:$PATH
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 ### ANTIDOTE ###
 # Clone antidote if necessary.
@@ -54,8 +57,11 @@ export PROJECTS="~/code/projects"
 alias update="sudo apt update && sudo apt upgrade -y"
 alias ..="cd .."
 alias c="clear"
+alias f="fg"
 alias nv='nvim'
 alias la="ls -a"
+alias sdn="shutdown -a now"
+alias rsn="shutdown -r now"
 
 alias P="python3 main.py"
 alias p="python3" 
@@ -73,9 +79,5 @@ alias xeph="Xephyr :5 & sleep 1 ; DISPLAY=:5 awesome"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-# The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/home/dane/google-cloud-sdk/path.zsh.inc' ]; then . '/home/dane/google-cloud-sdk/path.zsh.inc'; fi
-#
-# # The next line enables shell command completion for gcloud.
-# if [ -f '/home/dane/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/dane/google-cloud-sdk/completion.zsh.inc'; fi
-# fpath+=${ZDOTDIR:-~}/.zsh_functions
+# Turso
+# export PATH="/home/dane/.turso:$PATH"

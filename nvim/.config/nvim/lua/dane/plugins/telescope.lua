@@ -29,6 +29,7 @@ return {
     { '<leader>/', '<cmd>Telescope current_buffer_fuzzy_find<cr><cr>', desc = '[/] Fuzzily search in current buffer' },
     { '<leader>s/', '<cmd>Telescope live_grep<cr><cr>', desc = '[S]earch [/] in Open Files' },
     { '<leader>sn', '<cmd>Telescope find_files search_dirs={"$HOME/dotfiles/nvim/.config/nvim/"}<cr>', { desc = '[S]earch [N]eovim files' }, },
+    { '<leader>ns', '<cmd>Telescope find_files search_dirs={"$ZETTEL"}<cr>', { desc = '[S]earch [N]otes' }, },
     -- stylua: ignore end
   },
   config = function()

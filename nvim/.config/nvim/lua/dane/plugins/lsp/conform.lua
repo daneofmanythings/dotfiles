@@ -14,8 +14,8 @@ return {
 
       formatters_by_ft = {
         lua = {
-          'stylua',
-          'luacheck',
+          -- 'stylua',
+          -- 'luacheck',
         },
 
         go = {
@@ -23,7 +23,7 @@ return {
           'goimports',
         },
 
-        python = { 'ruff_lsp' },
+        -- python = { 'ruff_lsp' },
 
         cpp = { 'clang-format' },
 

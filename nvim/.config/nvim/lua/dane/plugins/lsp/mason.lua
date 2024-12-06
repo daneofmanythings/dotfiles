@@ -35,6 +35,8 @@ return {
         'cssls',
         -- Markdown
         'marksman',
+        -- Bash
+        'bashls',
       },
       automatic_installation = true,
     })
@@ -43,20 +45,22 @@ return {
     require('mason-tool-installer').setup({
       ensure_installed = {
         -- Lua
-        'stylua', -- formatter
+        'stylua',    -- formatter
         -- Go
-        'gofumpt', -- formatter
+        'gofumpt',   -- formatter
         'goimports', -- format imports
         -- Python
         -- 'black', -- formatter -- using ruff_lsp now
         -- 'ruff', -- general linter
-        'mypy', -- static typing linter
+        'mypy',         -- static typing linter
         -- C++
         'clang-format', -- formatter
         -- HTML, CSS
-        'prettier', -- formatter
+        'prettier',     -- formatter
         -- CSS
-        'stylelint', -- linter
+        'stylelint',    -- linter
+        -- Bash
+        'shellcheck',
       },
       auto_update = true,
     })

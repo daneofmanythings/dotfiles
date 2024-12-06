@@ -44,11 +44,13 @@ return { -- :h lspconfig-all
       'lua_ls',
       'gopls',
       'clangd',
-      'pyright',
+      -- 'pyright',
+      'basedpyright',
       'ruff_lsp',
       'html',
       'cssls',
       'marksman',
+      'bashls',
     }
 
     -- Note: Hard coded relative path to the lsp configs.
