@@ -18,6 +18,8 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+local helpers = require("helpers")
+
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -282,6 +284,17 @@ globalkeys = gears.table.join(
   awful.key({ modkey }, "w", function()
     mymainmenu:show()
   end, { description = "show main menu", group = "awesome" }),
+
+  awful.key({}, "XF86AudioMute", function()
+    helpers.volume_control(0)
+  end, {description = "toggle mute audio", group = "volume"}),
+  awful.key({}, "XF86AudioLowerVolume", function()
+    helpers.volume_control(-5)
+  end, {description = "lower volume", group = "volume"}),
+  awful.key({}, "XF86AudioRaiseVolume", function()
+    helpers.volume_control(5)
+  end, {description = "raise volume", group = "volume"}),
+
 
   -- Layout manipulation
   awful.key({ modkey, "Shift" }, "i", function()
