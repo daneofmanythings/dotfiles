@@ -23,8 +23,8 @@ return {
         -- Go
         'gopls',
         -- Python
-        'pyright',
-        'ruff_lsp',
+        'basedpyright',
+        'ruff',
         -- C++
         'clangd',
         -- Rust

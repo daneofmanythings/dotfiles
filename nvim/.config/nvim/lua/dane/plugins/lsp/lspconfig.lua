@@ -46,7 +46,7 @@ return { -- :h lspconfig-all
       'clangd',
       -- 'pyright',
       'basedpyright',
-      'ruff_lsp',
+      'ruff',
       'html',
       'cssls',
       'marksman',
