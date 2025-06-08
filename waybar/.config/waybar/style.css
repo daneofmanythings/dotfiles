@@ -37,20 +37,19 @@ button:hover {
   background-color: #eb4d4b;
 }
 
+#idle_inhibitor {
+  padding: 7px;
+}
 #cpu {
-  padding: 5px;
+  padding: 6px;
 }
 #memory {
-  padding: 5px;
-}
-#battery {
-  padding: 5px;
+  padding: 6px;
 }
 #battery {
   padding-left: 5px;
   padding-right: 9px;
 }
-
 #clock {
-  padding: 5px;
+  padding: 6px;
 }

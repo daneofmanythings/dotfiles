@@ -43,6 +43,7 @@ return { -- :h lspconfig-all
     local servers = {
       'lua_ls',
       'gopls',
+      'templ',
       'clangd',
       -- 'pyright',
       'basedpyright',

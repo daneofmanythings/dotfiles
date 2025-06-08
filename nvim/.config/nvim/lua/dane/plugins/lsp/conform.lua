@@ -22,6 +22,10 @@ return {
           'gofumpt',
           'goimports',
         },
+        templ = {
+          'gofumpt',
+          'templ',
+        },
 
         -- python = { 'ruff_lsp' },
 
