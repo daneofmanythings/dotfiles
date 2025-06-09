@@ -24,20 +24,6 @@ return { -- :h lspconfig-all
       end,
     })
 
-    local border = 'rounded'
-    local handlers = {
-      ["textDocument/hover"] = vim.lsp.with(
-        vim.lsp.handlers.hover, {
-          border = border,
-        }
-      ),
-      ["textDocument/signatureHelp"] = vim.lsp.with(
-        vim.lsp.handlers.signature_help, {
-          border = border,
-        }
-      ),
-    }
-
     -- enhancing the capabilities with nvim-cmp
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
@@ -59,7 +45,6 @@ return { -- :h lspconfig-all
       'gopls',
       'templ',
       'clangd',
-      -- 'pyright',
       'basedpyright',
       'ruff',
       'html',
@@ -69,11 +54,10 @@ return { -- :h lspconfig-all
     }
 
     -- Note: Hard coded relative path to the lsp configs.
-    local load_lsp = function(lsp, c, h, oal)
-      local config = require('dane.plugins.lsp.configs.' .. lsp)
+    local load_lsp = function(lsp, c, oal)
+      local success, config = pcall(require, 'dane.plugins.lsp.configs.' .. lsp)
+      config = success and config or {}
       config.capabilities = c
-      config.handlers = h
-      -- if there is an on_attach in the server config, create it as an autocmd
       if config.on_attach ~= nil then
         config.on_attach = oal(config.on_attach)
       end
@@ -82,7 +66,7 @@ return { -- :h lspconfig-all
 
     -- Setting language server configurations.
     for _, server in ipairs(servers) do
-      lspconfig[server].setup(load_lsp(server, capabilities, handlers, on_attach_loader))
+      lspconfig[server].setup(load_lsp(server, capabilities, on_attach_loader))
     end
   end,
 }

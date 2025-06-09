@@ -1,7 +1,5 @@
 local opt = vim.opt
 
-vim.diagnostic.config({ float = { border = 'rounded' } })
-
 opt.laststatus = 3
 opt.showmode = false
 opt.number = true

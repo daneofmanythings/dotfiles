@@ -1,10 +1,9 @@
 return {
   'folke/which-key.nvim',
-  -- keys = {
-  --   { '<leader>', '', desc = 'Start WhichKey' },
-  -- },
   config = function()
-    require('which-key').setup()
+    require('which-key').setup({
+      preset = "modern",
+    })
 
     require('which-key').add({
       -- ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
