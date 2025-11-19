@@ -38,3 +38,12 @@ vim.api.nvim_create_autocmd("WinNew", {
     vim.api.nvim_win_set_config(win, config)
   end,
 })
+
+-- ftplugins/*.lua was not being loaded
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "text" },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+  end,
+})

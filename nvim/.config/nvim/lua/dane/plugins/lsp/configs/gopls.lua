@@ -2,7 +2,7 @@ local util = require('lspconfig/util')
 
 return {
   cmd = { 'gopls' },
-  filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
+  filetypes = { 'go', 'gomod', 'gowork', 'gotmpl', 'tmpl' },
   root_dir = util.root_pattern('go.work', 'go.mod', '.git'),
   settings = {
     gopls = { -- https://cs.opensource.google/go/x/tools/+/refs/tags/gopls/v0.15.2:gopls/doc/settings.md

@@ -51,6 +51,9 @@ return { -- :h lspconfig-all
       'cssls',
       'marksman',
       'bashls',
+      'ts_ls',
+      'jsonls',
+      'yamlls',
     }
 
     -- Note: Hard coded relative path to the lsp configs.

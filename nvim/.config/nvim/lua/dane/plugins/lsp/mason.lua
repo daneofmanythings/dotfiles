@@ -37,6 +37,10 @@ return {
         'marksman',
         -- Bash
         'bashls',
+        -- Javascript
+        'ts_ls',
+        -- JSON
+        'jsonls',
       },
       automatic_installation = true,
     })
