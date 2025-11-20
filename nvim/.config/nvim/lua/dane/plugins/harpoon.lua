@@ -41,11 +41,11 @@ return {
 
     vim.keymap.set("n", "<leader>mf", function() harpoon:list():select(1) end,
       { desc = "Harpoon [m]ove [f]irst" })
-    vim.keymap.set("n", "<leader>mj", function() harpoon:list():select(2) end,
+    vim.keymap.set("n", "<leader>ms", function() harpoon:list():select(2) end,
       { desc = "Harpoon [m]ove [s]econd" })
-    vim.keymap.set("n", "<leader>mk", function() harpoon:list():select(3) end,
+    vim.keymap.set("n", "<leader>mt", function() harpoon:list():select(3) end,
       { desc = "Harpoon [m]ove [t]hird" })
-    vim.keymap.set("n", "<leader>ml", function() harpoon:list():select(4) end,
+    vim.keymap.set("n", "<leader>mr", function() harpoon:list():select(4) end,
       { desc = "Harpoon [m]ove fou[r]th" })
   end,
 }
